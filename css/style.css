@@ -99,6 +99,7 @@ section {
 
 .tabcontent {
     display: none;
+    animation-duration: 2s;
 }
 
 .together {
@@ -376,6 +377,11 @@ input[type="month"] {
 textarea {
     overflow: auto;
     resize: vertical;
+    background: white;
+    border-radius: 5px;
+    margin-top: 15px;
+    border-style: solid;
+    border-color: #3855D9;
 }
 
 fieldset {
@@ -9783,6 +9789,10 @@ button.bg-dark:focus {
         margin-left: 1rem !important;
     }
 
+#sidebar ul li a:hover {
+    font-size: 16px;
+}
+
     .m-sm-4 {
         margin: 1.5rem !important;
     }
@@ -11926,6 +11936,7 @@ a.whitef {
     -moz-box-shadow: 0px 7px 15px -8px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 7px 15px -8px rgba(0, 0, 0, 0.75);
     background-color: #ffff;
+    z-index: 100;
 }
 
 .whitef {
@@ -12013,7 +12024,6 @@ a.whitef {
     padding: 10px 30px;
     display: block;
     color: white;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #sidebar ul li a span {
@@ -12096,4 +12106,8 @@ a[data-toggle="collapse"] {
 .btn.btn-primary:focus {
     background: #3e64ff !important;
     border-color: #3e64ff !important;
+}
+
+.welcome{
+    margin-top: 100px;
 }

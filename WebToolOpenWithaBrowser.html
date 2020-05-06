@@ -9,15 +9,16 @@
     <script src="./jquery-3.2.1.js" type="text/javascript"></script>
     <script src="./custom.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 </head>
 
 <body>
-
     <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar" class="active">
+        <nav id="sidebar" class="active animated fadeInLeft">
             <img class="logoimg" src="images/logo.png">
             <hr class="hrline">
             <ul class="list-unstyled components mb-5">
@@ -43,12 +44,12 @@
                     <a class="whitef" href="#" onclick="ui.htmlOpenTab(event, 'Proposal')"><span class="fa fa-file-text whitef"></span> Proposal</a>
                 </li>
                 <li>
-                    <a class="whitef" href="#" onclick="ui.htmlOpenTab(event, 'Keyfile')"><span class="fa fa-question whitef"></span> Keyfile</a>
+                    <a class="whitef" href="#" onclick="ui.htmlOpenTab(event, 'BurnFundNodeTx')"><span class="fa fa-question whitef"></span> Keyfile</a>
                 </li>
 
             </ul>
         </nav>
-        <div id="content" class="p-4 p-md-5">
+        <div id="content" class="p-4 p-md-5 animated fadeInDown">
             <div class="row">
                 <div class="col">
                     <div class="balanceuser p-4">
@@ -57,30 +58,43 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="features p-4 featureInputs">
+                    <div class="features p-4 featureInputs animated fadeInDown">
                         <p id="error" style="display: none;"></p>
                         <p id="appinput">Address: <input id="inputaddress" class="form-control" type="text" size="34" accept="text/plain" placeholder="SIN address format" onchange="openWalletForAddress(event)"><br>
-                            OR Import Keyfile: <input id="keyfile" type="file" accept="text/plain" onchange="openWalletFromKeyJSONFile(event)"><br>
+                            OR Import Keyfile: <input id="keyfile" type="file" accept=".json" onchange="openWalletFromKeyJSONFile(event)"><br>
                     </div>
                 </div>
                 <div class="col">
                     <div class="col"></div>
                 </div>
             </div>
-            <div id="SendcoinTx" class="tabcontent backtab">
+            <div class="row tabcontent welcome">
+                <div class="col">
+                    <h1>Welcome To SINOVATE WebTool</h1>
+                    <p>SIN Web Client Side Tool HTML / Javascript / CSS / Bootstrap</p>
+                    <p><em>Features</em></p>
+                    <ul>
+                        <li>Send coin nominative feature</li>
+                        <li>Invoice payment transaction with attached information</li>
+                        <li>Vote E-Governance vote</li>
+                        <li>New features Coming soon</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="SendcoinTx" class="tabcontent backtab animated fadeInLeft">
                 <h3>Send coin</h3>
                 <p>Send SIN cryptocurrency from Alice to Bob.</p>
             </div>
-            <div id="InvoicePayment" class="tabcontent backtab">
+            <div id="InvoicePayment" class="tabcontent backtab animated fadeInLeft">
                 <h3>Invoice payment</h3>
                 <p>Invoice Validation. If the merchant supports SIN,<br>
                     the invoice can be validated in a few seconds (more detail will be released in the future)</p>
             </div>
-            <div id="VoteTx" class="tabcontent backtab">
+            <div id="VoteTx" class="tabcontent backtab animated fadeInLeft">
                 <h3>Vote</h3>
                 <p>Participate in SINOVATE Governance.</p>
             </div>
-            <div id="MultiSig" class="tabcontent backtab">
+            <div id="MultiSig" class="tabcontent backtab animated fadeInLeft">
                 <h3>Multisignature Address</h3>
                 <p>Multisignature (multisig) refers to requiring multiple keys to authorize a <br>
                     Sinovate transaction, rather than a single signature from one key.<br>
@@ -95,38 +109,42 @@
                             <p id="commitTx"></p>
                         </p>
             </div>
-            <div id="MultiSigTx" class="tabcontent backtab">
+            <div id="MultiSigTx" class="tabcontent backtab animated fadeInLeft">
                 <h3>Multisignature Transaction</h3>
                 <p>To send SIN to a SINOVATE multisig address, a transaction can be created by everyone, and it requires threshold signatures before being broadcasted to the network.
                 </p>
             </div>
-            <div id="SignTx" class="tabcontent backtab">
+            <div id="SignTx" class="tabcontent backtab animated fadeInLeft">
                 <h3>Sign Transaction</h3>
                 <p>A transaction can be created without a signature in a separate step. You can sign your transaction if you have SINKeyFile and passphrase.
                 </p>
             </div>
-            <div id="Proposal" class="tabcontent backtab">
+            <div id="Proposal" class="tabcontent backtab animated fadeInLeft">
                 <h3>Proposal</h3>
                 <p>Proposals and Voting are essential processes in our governance of the SINOVATE public chain.
                 </p>
             </div>
-            <div id="Keyfile" class="tabcontent backtab">
+            <div id="BurnFundNodeTx" class="tabcontent backtab animated fadeInLeft">
                 <h3>Keyfile </h3>
-                <p>To use this tool, please use SIN wallet and export a Keyfile with RPC<br>exportaddressnewpass youraddress newpassphrase
-                </p>
+                <p>To use this tool, please follow these steps:</p>
+                <ol>
+                    <li>Open the Qt Sin Wallet</li>
+                    <li>Open the Debug Console</li>
+                    <li>Apply the following command "RPC exportaddressnewpass youraddress newpassphrase"</li>
+                    <li>Export the Keyfile into the Tool</li>
+                </ol>
             </div>
         </div>
 
 
         <script type="text/javascript">
-            //hide error alert at the beginning.
             $('#error').hide();
             $('#txCreate').hide();
             $('#userinfo').hide();
             $('#appinput').show();
 
         </script>
-        <script src="js/jquery.min.js"></script>
+        <!-- <script src="js/jquery.min.js"></script> -->
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
@@ -142,21 +160,21 @@
     <div class="row1">
         <div class="col together1">
             <!-- Copyright -->
-            <p class="footer-copyright text-left ">© 2020 SINOVATE FOUNDATION. ALL RIGHTS RESERVED <a href="https://sinovate.io/wp-content/uploads/2020/03/SINOVATEpatent.pdf"> REGISTERED COMPANY</a>
-        </div>
-        <div class="col together">
-            <a href="https://www.youtube.com/c/sinovate"><i class="fa fa-youtube fa-3x social"></i></a>
-            <a href="https://www.reddit.com/r/sinovate/"><i class="fa fa-reddit fa-3x social"></i></a>
-            <a href="https://t.me/SINOVATEChain"><i class="fa fa-telegram fa-3x social"></i></a>
-            <a href="https://twitter.com/SinovateChain"><i class="fa fa-twitter fa-3x social"></i></a>
-            <a href="https://bitcointalk.org/index.php?topic=5147827.0"><i class="fa fa-btc fa-3x social"></i></a>
-            <a href="https://www.facebook.com/SinovateBlockchain/"><i class="fa fa-facebook fa-3x social"></i></a>
-            <a href="https://github.com/SINOVATEblockchain"><i class="fa fa-github fa-3x social"></i></a>
-            <a href="https://www.instagram.com/sinovatechain/"><i class="fa fa-instagram fa-3x social"></i></a>
-            <a href="https://www.linkedin.com/in/sinovate-foundation-818672172/"><i class="fa fa-linkedin fa-3x social"></i></a>
-            <a href="https://medium.com/@sinovatechain"><i class="fa fa-medium fa-3x social"></i></a>
+            <p class="footer-copyright text-left ">© 2020 SINOVATE FOUNDATION. ALL RIGHTS RESERVED <a href="https://sinovate.io/wp-content/uploads/2020/03/SINOVATEpatent.pdf"> REGISTERED COMPANY</a></p>
         </div>
     </div>
+    <div class="col together">
+        <a href="https://www.youtube.com/c/sinovate"><i class="fab fa-youtube fa-3x social"></i></a>
+        <a href="https://twitter.com/SinovateChain"><i class="fab fa-reddit fa-3x social"></i></a>
+        <a href="https://t.me/SINOVATEChain"><i class="fab fa-telegram fa-3x social"></i></a>
+        <a href="https://reddit.com/r/sinovate"><i class="fab fa-twitter fa-3x social"></i></a>
+        <a href="https://bitcointalk.org/index.php?topic=5147827.0"><i class="fab fa-btc fa-3x social"></i></a>
+        <a href="https://www.facebook.com/SinovateBlockchain/"><i class="fab fa-facebook fa-3x social"></i></a>
+        <a href="https://github.com/SINOVATEblockchain"><i class="fab fa-github fa-3x social"></i></a>
+        <a href="https://www.instagram.com/sinovatechain/"><i class="fab fa-instagram fa-3x social"></i></a>
+        <a href="https://linkedin.com/in/sinovate-foundation-818672172"><i class="fab fa-linkedin fa-3x social"></i></a>
+        <a href="https://medium.com/@sinovatechain"><i class="fab fa-medium fa-3x social"></i></a>
+        <a href="https://discord.gg/WnRExsx"><i class="fab fa-discord fa-3x social"></i></a></div>
 </footer>
 
 </html>
